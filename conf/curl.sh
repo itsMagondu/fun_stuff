@@ -1,0 +1,2 @@
+#!bin/bash
+curl -u magondu:magondu -H "Content-Type: application/json" -X POST -d '{"date":"2014-02-02","latitude":"23.24","longitude":"23.43","sensor_id":"2","reading":"4"}' http://localhost:8000/devices/
