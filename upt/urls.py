@@ -13,12 +13,12 @@ router.register(r'devices', DeviceViewSet)
 urlpatterns = patterns(
     '',
     # Examples:
-        # url(r'^$', 'upande_test.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    # url(r'^$', 'upande_test.views.home', name='home'),
     
     url(r'^logger/', include('logger.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login',name="up_login"),
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
+    url(r'^', 'logger.views.index'),
      )
