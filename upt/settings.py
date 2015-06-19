@@ -61,8 +61,8 @@ WSGI_APPLICATION = 'upt.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #        'NAME': 'd4hbg5anko3iag',
 #        'USER':'ixcgodekzmeuoq',
 #        'PASSWORD':'VEAGWwoE5a8de2MwVOP2D_PaP',
