@@ -3,3 +3,5 @@ psycopg2
 djangorestframework
 django-chart-tools
 django-toolbelt
+dj-database-url
+django-postgrespool

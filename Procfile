@@ -1,0 +1,1 @@
+web: gunicorn upt.wsgi --log-file -
