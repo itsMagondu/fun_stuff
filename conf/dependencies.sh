@@ -1,2 +1,2 @@
 #!bin/bash
-su apt-get build-dep python-psycopg2
+apt-get build-dep python-psycopg2
