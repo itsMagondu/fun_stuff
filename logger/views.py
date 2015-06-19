@@ -41,13 +41,7 @@ def index(request):
         longitude = request.POST.get("longitude",None)
         sensor_id = request.POST.get('sensor_id',None)
         reading = request.POST.get('reading',None)
-        
-        #date = form.cleaned_data["date"]
-        #latitude = form.cleaned_data["latitude"]
-        #longitude = form.cleaned_data["longitude"]
-        #sensor_id = form.cleaned_data["sensor_id"]
-        #reading = form.cleaned_data["reading"]
-        
+                
         dev = Device.objects.create(
             date = date,
             latitude = latitude,
@@ -55,9 +49,18 @@ def index(request):
             sensor_id = sensor_id,
             reading = reading,
             )
-        return JsonResponse({"success":"Readings taken and saved with id: " + str(dev.id)})
+        
+        form = DeviceForm()
+        dev_readings = Device.objects.all().values_list("reading",flat=True)
+        
+        args = {}
+        args['form'] = form
+        args['data'] = dev_readings
+        args['success'] = "Reading taken and saved with id: " + str(dev.id)
+
+        #return JsonResponse({"success":"Readings taken and saved with id: " + str(dev.id)})
+        return render(request, 'index.html', args)
     else:
-        print 'here'
         form = DeviceForm()
         
         dev = Device.objects.all().values_list("reading",flat=True)
